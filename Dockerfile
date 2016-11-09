@@ -12,5 +12,5 @@ RUN mkdir -p /var/www
 VOLUME ["/var/www"]
 WORKDIR "/var/www"
 
-ENTRYPOINT ["composer"]
-CMD ["--help"]
+ENTRYPOINT ["/usr/sbin/apache2ctl"]
+CMD ["-DFOREGROUND"]
