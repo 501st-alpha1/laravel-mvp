@@ -8,6 +8,9 @@ RUN apt-get update -y && \
     apt-get remove --purge curl -y && \
     apt-get clean
 
+RUN rm /etc/apache2/sites-enabled/*
+COPY apache.conf /etc/apache2/sites-enabled/
+
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
 WORKDIR "/var/www"
