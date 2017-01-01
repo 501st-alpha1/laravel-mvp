@@ -14,6 +14,7 @@ COPY apache.conf /etc/apache2/sites-enabled/
 RUN a2enmod php5
 
 RUN mkdir -p /var/www
+RUN rm -r /var/www/*
 VOLUME ["/var/www"]
 WORKDIR "/var/www"
 
